@@ -11,19 +11,19 @@ module.exports = function(grunt) {
                     'bower_components/hammer.js/hammer.min.js',
                     'scripts/toggle.js'
                 ],
-                dest: '../Scripts/app.js',
+                dest: '../brent_rempel/Scripts/app.js',
             },
 
             modernizr : {
                 src: 'bower_components/foundation/js/vendor/modernizr.js',
-                dest: '../Scripts/modernizr.js'
+                dest: '../brent_rempel/Scripts/modernizr.js'
             }
         },
 
         uglify: {
             build: {
-                src: '../Scripts/app.js',
-                dest: '../Scripts/app.js'
+                src: '../brent_rempel/Scripts/app.js',
+                dest: '../brent_rempel/Scripts/app.js'
             }
         },
 
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {                           
-                    '../Styles/main.css': 'sass/main.scss'
+                    '../brent_rempel/Styles/main.css': 'sass/main.scss'
               }
             },
             prod: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    '../Styles/main.css': 'sass/main.scss'
+                    '../brent_rempel/Styles/main.css': 'sass/main.scss'
                 }
             }
         },
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['concat', 'sass:dev']);
-    grunt.registerTask('production', ['concat', 'uglify', 'sass:prod', 'versioning']);
+    grunt.registerTask('production', ['concat', 'uglify', 'sass:prod']);
     grunt.registerTask('dev', ['concat', 'sass:dev','watch']);
 
 };

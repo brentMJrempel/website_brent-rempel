@@ -1,0 +1,178 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  width: 250px;
+  max-width: 95%;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1;
+  color: white;
+}
+.toggle[data-active] {
+  display: inline-block;
+}
+.toggle[data-active="on"]::after, .toggle[data-active="off"]::before {
+  width: 0%;
+  content: "\2000";
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.toggle[data-active="on"]::after, .toggle[data-active="on"]::before {
+  background-color: #8E44AD;
+}
+.toggle[data-active="off"]::after, .toggle[data-active="off"]::before {
+  background-color: #34495E;
+}
+.toggle[data-active="on"]::before {
+  padding-left: 12.5px;
+}
+.toggle[data-active="off"]::after {
+  padding-right: 12.5px;
+}
+.toggle::before, .toggle::after {
+  width: 85%;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+  line-height: 1.2;
+  font-size: 25px;
+}
+.toggle::before {
+  content: attr(data-toggle-on);
+  background-color: #8E44AD;
+  float: left;
+  text-align: left;
+}
+.toggle::after {
+  content: attr(data-toggle-off);
+  background-color: #34495E;
+  float: right;
+  text-align: right;
+}
+.toggle .toggle-switch {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.toggle .toggle-switch::after, .toggle .toggle-switch::before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 30px;
+  background-color: white;
+  left: 55%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.toggle .toggle-switch::after {
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(-45deg);
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.toggle .toggle-switch::before {
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(45deg);
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.toggle[data-active="on"] .toggle-switch {
+  background-color: #8E44AD;
+}
+.toggle[data-active="on"] .toggle-switch::after {
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(-45deg);
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.toggle[data-active="on"] .toggle-switch::before {
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(45deg);
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.toggle[data-active="off"] .toggle-switch {
+  background-color: #34495E;
+}
+.toggle[data-active="off"] .toggle-switch::after {
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(45deg);
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.toggle[data-active="off"] .toggle-switch::before {
+  top: 80%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -moz-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -ms-transform: translate(-50%, -50%) rotateZ(-45deg);
+  -o-transform: translate(-50%, -50%) rotateZ(-45deg);
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.toggle + .full-overlay {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.toggle[data-active="on"] + .full-overlay {
+  background-color: #8E44AD;
+}
+.toggle[data-active="off"] + .full-overlay {
+  background-color: #34495E;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.full-overlay {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=main.css.map */
