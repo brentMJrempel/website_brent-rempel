@@ -1,0 +1,132 @@
+﻿$toggle-width: 250px;
+$toggle-height: 30px;
+$transition-speed: 0.5s;
+$color-on: #8E44AD;
+$color-off: #34495E;
+$font-color: white;
+$arrow-color: white;
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    width: $toggle-width;
+    max-width: 95%;
+    height: $toggle-height;
+    cursor: pointer;
+    z-index: 1;
+    color: $font-color;
+
+    &[data-active]{display: inline-block;}
+
+    &[data-active="on"]::after, &[data-active="off"]::before {
+        width: 0%;
+        content: "\2000";
+        @include transition(all $transition-speed);
+    }
+
+    &[data-active="on"]::after, &[data-active="on"]::before {
+        background-color: $color-on;
+    }
+
+    &[data-active="off"]::after, &[data-active="off"]::before {
+        background-color: $color-off;
+    }
+
+    &[data-active="on"]::before {
+        padding-left: $toggle-width/20;
+    }
+
+    &[data-active="off"]::after {
+        padding-right: $toggle-width/20;
+    }
+
+    &::before, &::after {
+        width: 85%;
+        height: 100%;
+        @include transition(all $transition-speed);
+        overflow: hidden;
+        line-height: 1.2;
+        font-size: 25px;
+    }
+
+    &::before {
+        content: attr(data-toggle-on);
+        background-color: $color-on;
+        float: left;
+        text-align: left;
+    }
+
+    &::after {
+        content: attr(data-toggle-off);
+        background-color: $color-off;
+        float: right;
+        text-align: right;
+    }
+
+    .toggle-switch {
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 15%;
+        @include transition(all $transition-speed);
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            height: 5px;
+            width: 30px;
+            background-color: $arrow-color;
+            left: 55%;
+            @include transition(all $transition-speed);
+        }
+
+        &::after {
+            top: 20%;
+            @include transform(translate(-50%, -50%) rotateZ(-45deg));
+        }
+
+        &::before {
+            top: 80%;
+            @include transform(translate(-50%, -50%) rotateZ(45deg));
+        }
+    }
+
+    &[data-active="on"] .toggle-switch {
+        background-color: $color-on;
+        &::after {
+            top: 20%;
+            @include transform(translate(-50%, -50%) rotateZ(-45deg));
+        }
+
+        &::before {
+            top: 80%;
+            @include transform(translate(-50%, -50%) rotateZ(45deg));
+        }
+    }
+
+    &[data-active="off"] .toggle-switch {
+        background-color: $color-off;
+        &::after {
+            top: 20%;
+            @include transform(translate(-50%, -50%) rotateZ(45deg));
+        }
+
+        &::before {
+            top: 80%;
+            @include transform(translate(-50%, -50%) rotateZ(-45deg));
+        }
+    }
+
+    &+.full-overlay {
+        @include transition(all $transition-speed);
+    }
+
+    &[data-active="on"]+.full-overlay {
+        background-color: $color-on;
+    }
+
+    &[data-active="off"]+.full-overlay {
+        background-color: $color-off;
+    }
+}
