@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Brent Rempel</title>
+        <link rel="stylesheet" type="text/css" href="~/Styles/main.css">
+        <script src="~/Scripts/app.js"></script>
+    </head>
+    <body>
+        @RenderPage("~/Shared/_Header.cshtml")
+
+        <div id="wrapper">
+            @RenderBody()
+        </div>
+
+        @RenderPage("~/Shared/_Footer.cshtml")
+    </body>
+</html>
