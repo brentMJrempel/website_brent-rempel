@@ -1,5 +1,5 @@
-﻿$toggle-width: 250px;
-$toggle-height: 30px;
+﻿$toggle-width: 15.625rem;
+$toggle-height: 1.875rem;
 $transition-speed: 0.5s;
 $color-on: #8E44AD;
 $color-off: #34495E;
@@ -47,7 +47,7 @@ $arrow-color: white;
         @include transition(all $transition-speed);
         overflow: hidden;
         line-height: 1.2;
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
 
     &::before {

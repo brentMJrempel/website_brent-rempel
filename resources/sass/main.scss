@@ -5,6 +5,7 @@
 }
 
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'imports/font';
 @import 'imports/toggle';
 
 html, body {
@@ -17,6 +18,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: #8E44AD;
 }
 
 .full-overlay {
@@ -31,4 +33,31 @@ html, body {
     top: 50%;
     left: 50%;
     @include transform(translate(-50%, -50%));
+}
+
+.bar {
+    height: 10px;
+    width: 100px;
+    background-color: grey;
+}
+
+.name {
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    @include transition(all 0.5s linear);
+
+    &.position-start {
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        font-size: 4rem;
+    }
+
+    &.position-middle {
+        top: 50%;
+        left: 1rem;
+        @include transform(translate(0%, -50%));
+        font-size: 2.5rem;
+    }
 }
