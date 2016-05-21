@@ -45,7 +45,8 @@ html, body {
     position: absolute;
     cursor: pointer;
     color: white;
-    @include transition(all 0.5s linear);
+    @include transition(all 0.25s linear);
+    z-index: 2;
 
     &.position-start {
         top: 50%;
@@ -60,4 +61,38 @@ html, body {
         @include transform(translate(0%, -50%));
         font-size: 2.5rem;
     }
+
+    &.name-mouse-down {
+        @include transform(translate(-50%, -50%) scale(0.95));
+        opacity: 0.66;
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+    @include transition(all 0.25s linear);
+    z-index: 1;
+    text-align: center;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        &:visited {
+            color: white;
+        }
+        text-decoration: none;
+    }
+}
+
+.name.name-mouse-down+.menu {
+    opacity: 0.33;
+    @include transform(translate(-50%, -50%) scale(1.05));
 }

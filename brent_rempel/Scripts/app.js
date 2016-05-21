@@ -3063,7 +3063,7 @@ $(function () {
     });
 });
 $(function() {
-    $(".name").click(function() {
-        $(this).removeClass("position-start").addClass("position-middle"); 
+    $(".name").on("mousedown mouseup", function() {
+        $(this).toggleClass("name-mouse-down"); 
     });
 })
