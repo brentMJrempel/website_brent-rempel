@@ -6,7 +6,6 @@ module.exports = function(grunt) {
             app: {
                 src: [
                     'bower_components/jquery/dist/jquery.slim.min.js',
-                    'bower_components/moment/moment.js',
                     'bower_components/hammer.js/hammer.min.js',
                     'scripts/toggle.js',
                     'scripts/name.js'
@@ -32,7 +31,7 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded'
                 },
-                files: {                           
+                files: {
                     '../brent_rempel/Styles/main.css': 'sass/main.scss'
               }
             },
@@ -77,7 +76,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replacer');
 
     grunt.registerTask('default', ['concat', 'sass:dev']);
-    grunt.registerTask('production', ['concat', 'uglify', 'sass:prod', 'versioning']);
+    grunt.registerTask('production', ['concat', 'uglify', 'sass:prod']);
     grunt.registerTask('dev', ['concat', 'sass:dev','watch']);
 
 };
