@@ -886,8 +886,13 @@ body, html, * {
 
 html, body {
   height: 100%;
-  width: 100%;
+  font-size: 100%;
+}
+
+body {
   margin: 0;
+  background-color: #8E44AD;
+  padding: 0;
 }
 
 * {
@@ -922,6 +927,7 @@ header h1.title {
   padding: 0;
   cursor: pointer;
   font-size: 3.75rem;
+  font-size: 2.1875rem;
   -webkit-transition: all 0.45s linear;
   -moz-transition: all 0.45s linear;
   transition: all 0.45s linear;
@@ -1005,6 +1011,7 @@ nav.menu {
   transform: translate(-50%, -50%);
   transform-origin: center;
   font-size: 1rem;
+  font-size: 0.75rem;
   opacity: 0;
   -webkit-transition: all 0.45s linear;
   -moz-transition: all 0.45s linear;
@@ -1089,6 +1096,7 @@ main section .arrow-up {
 }
 #wrapper.stage-1 header h1.title {
   font-size: 2.5rem;
+  font-size: 1.5625rem;
 }
 #wrapper.stage-1 header span.arrow-down {
   opacity: 0;
@@ -1103,6 +1111,7 @@ main section .arrow-up {
 }
 #wrapper.stage-1.stage-2 header h1.title {
   font-size: 2.1875rem;
+  font-size: 1.25rem;
 }
 #wrapper.stage-1.stage-2 nav.menu {
   top: 15%;
